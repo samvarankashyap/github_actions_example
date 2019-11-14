@@ -18,4 +18,14 @@ jobs:
       run: docker build . --file centos7 --tag mycentos7:latest
     - name: Build centos8 
       run: docker build . --file centos7 --tag mycentos8:latest
+    - name: Run the container
+      run: docker run myfedora30:latest
+    - name: Run the container
+      run: docker run myfedora31:latest
+    - name: Run the container
+      run: docker run mycentos7:latest
+    - name: Run the container
+      run: docker run mycentos8:latest
+
+
 
