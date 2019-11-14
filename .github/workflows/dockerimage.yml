@@ -10,5 +10,12 @@ jobs:
 
     steps:
     - uses: actions/checkout@v1
-    - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
+    - name: Build build fedora30
+      run: docker build . --file fedora30 --tag myfedora30:$(date +%s)
+    - name: Build the Docker image fedora31
+      run: docker build . --file fedora31 --tag myfedora31:$(date +%s)
+    - name: Build the Docker image centos7
+      run: docker build . --file centos7 --tag mycentos7:$(date +%s)
+    - name: Build centos8 
+      run: docker build . --file centos7 --tag mycentos8:$(date +%s)
+
