@@ -1,6 +1,16 @@
 # Container image that runs your code
 FROM fedora:30
 
+RUN dnf -y install python3-pip ansible curl gcc python3-devel \
+                   openssl-devel libvirt-daemon-driver-* libvirt-daemon \
+                   libvirt-daemon-kvm qemu-kvm libvirt-daemon-config-network \
+                   libvirt-python3 libvirt-devel redhat-rpm-config file \
+                   openssh genisoimage libvirt-client virt-install net-tools \
+                   make libxslt krb5-workstation jq buildah \
+                   libselinux-python3 git libxslt-devel libxslt \
+    && dnf clean all;
+
+
 # Copies your code file from your action repository to the filesystem path `/` of the container
 COPY entrypoint.sh /entrypoint.sh
 
